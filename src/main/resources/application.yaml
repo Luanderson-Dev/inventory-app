@@ -1,3 +1,14 @@
 spring:
   application:
     name: inventory-app
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/inventory_db}
+    username: ${SPRING_DATASOURCE_USERNAME:user}
+    password: ${SPRING_DATASOURCE_PASSWORD:password}
+
+  jpa:
+    hibernate:
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: update
+    show-sql: true
